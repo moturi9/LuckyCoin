@@ -1,2 +1,0 @@
-# LuckyCoin
-Created with CodeSandbox
