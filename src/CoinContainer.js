@@ -23,6 +23,7 @@ class CoinContainer extends Component {
       numTails: 0
     }
     this.handleClick = this.handleClick.bind(this)
+    this.handleClear = this.handleClear.bind(this)
   }
 
   flipCoin() {
@@ -41,6 +42,21 @@ class CoinContainer extends Component {
     this.flipCoin()
   }
 
+  reset() {
+    this.setState(st => {
+      return {
+        currCoin: null,
+        numFlips: 0,
+        numHeads: 0,
+        numTails: 0
+      }
+    })
+  }
+
+  handleClear() {
+    this.reset()
+  }
+
   render() {
     return (
       <div className="CoinContainer">
@@ -51,6 +67,7 @@ class CoinContainer extends Component {
           Out of {this.state.numFlips} flips, there have been{' '}
           {this.state.numHeads} Heads and {this.state.numTails} Tails{' '}
         </p>
+        <button onClick={this.handleClear}>Clear</button>
       </div>
     )
   }
